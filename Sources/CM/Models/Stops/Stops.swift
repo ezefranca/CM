@@ -1,7 +1,9 @@
 import Foundation
 
+public typealias Stops = [Stop]
+
 // MARK: - Stop
-public struct Stop: Codable {
+public struct Stop: Model {
     public let districtID: String
     public let districtName: String
     public let facilities: [String]
@@ -11,7 +13,7 @@ public struct Stop: Codable {
     public let lon, municipalityID: String
     public let municipalityName: String
     public let name: String
-    public let operationalStatus: OperationalStatus
+    public let operationalStatus: String
     public let parishID, parishName: String?
     public let patterns: [String]
     public let regionID: String
@@ -39,23 +41,8 @@ public struct Stop: Codable {
         case ttsName = "tts_name"
         case wheelchairBoarding = "wheelchair_boarding"
     }
+    
+    public static func < (lhs: Stop, rhs: Stop) -> Bool {
+        lhs.id == rhs.id
+    }
 }
-
-public enum Facility: String, Codable {
-    case boat = "boat"
-    case lightRail = "light_rail"
-    case school = "school"
-    case subway = "subway"
-    case train = "train"
-    case transitOffice = "transit_office"
-}
-
-public enum OperationalStatus: String, Codable {
-    case active = "ACTIVE"
-    case inactive = "INACTIVE"
-    case provisional = "PROVISIONAL"
-    case seasonal = "SEASONAL"
-    case voided = "VOIDED"
-}
-
-public typealias Stops = [Stop]

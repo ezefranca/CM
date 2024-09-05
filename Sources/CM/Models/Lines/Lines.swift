@@ -3,7 +3,7 @@ import Foundation
 public typealias Lines = [Line]
 
 // MARK: - Line
-public struct Line: Codable {
+public struct Line: Model {
     public let color: String
     public let facilities: [String?]
     public let id: String
@@ -19,5 +19,9 @@ public struct Line: Codable {
         case municipalities, patterns, routes
         case shortName = "short_name"
         case textColor = "text_color"
+    }
+    
+    public static func < (lhs: Line, rhs: Line) -> Bool {
+        lhs.id == rhs.id
     }
 }

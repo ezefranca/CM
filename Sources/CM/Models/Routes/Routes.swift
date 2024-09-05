@@ -2,7 +2,7 @@ import Foundation
 
 public typealias Routes = [Route]
 // MARK: - Route
-public struct Route: Codable {
+public struct Route: Model {
     public let color: String
     public let facilities: [String?]
     public let id, lineID: String
@@ -20,5 +20,9 @@ public struct Route: Codable {
         case municipalities, patterns
         case shortName = "short_name"
         case textColor = "text_color"
+    }
+    
+    public static func < (lhs: Route, rhs: Route) -> Bool {
+        lhs.id == rhs.id
     }
 }

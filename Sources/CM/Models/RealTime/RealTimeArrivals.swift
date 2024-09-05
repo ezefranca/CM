@@ -3,7 +3,8 @@ import Foundation
 public typealias RealTimeArrivals = [RealTimeArrival]
 
 // MARK: - RealTimeArrival
-public struct RealTimeArrival: Codable {
+public struct RealTimeArrival: Model {
+    public var id: UUID = .init()
     public let estimatedArrival: String?
     public let estimatedArrivalUnix: Int?
     public let headsign: String
@@ -31,5 +32,9 @@ public struct RealTimeArrival: Codable {
         case stopSequence = "stop_sequence"
         case tripID = "trip_id"
         case vehicleID = "vehicle_id"
+    }
+    
+    public static func < (lhs: RealTimeArrival, rhs: RealTimeArrival) -> Bool {
+        lhs.lineID == rhs.lineID && lhs.routeID == rhs.routeID
     }
 }

@@ -3,7 +3,7 @@ import Foundation
 public typealias FacilitiesStores = [FacilityStore]
 
 // MARK: - Facility
-public struct FacilityStore: Codable {
+public struct FacilityStore: Model {
     public let activeCounters: Int
     public let address: String
     public let brandName: String
@@ -61,5 +61,9 @@ public struct FacilityStore: Codable {
         case regionName = "region_name"
         case shortName = "short_name"
         case stops, url
+    }
+    
+    public static func < (lhs: FacilityStore, rhs: FacilityStore) -> Bool {
+        lhs.id == rhs.id
     }
 }

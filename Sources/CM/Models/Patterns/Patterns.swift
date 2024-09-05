@@ -1,7 +1,7 @@
 import Foundation
 
 // MARK: - Patterns
-public struct Patterns: Codable {
+public struct Patterns: Model {
     public let color: String
     public let direction: Int
     public let facilities: [String]
@@ -24,10 +24,15 @@ public struct Patterns: Codable {
         case trips
         case validOn = "valid_on"
     }
+    
+    public static func < (lhs: Patterns, rhs: Patterns) -> Bool {
+        lhs.id == rhs.id
+    }
 }
 
 // MARK: - Path
-public struct Path: Codable {
+public struct Path: Model {
+    public var id: UUID = .init()
     public let allowDropOff, allowPickup: Bool
     public let distanceDelta: Double
     public let stop: Stop
@@ -40,10 +45,15 @@ public struct Path: Codable {
         case stop
         case stopSequence = "stop_sequence"
     }
+    
+    
+    public static func < (lhs: Path, rhs: Path) -> Bool {
+        lhs.stop.id == rhs.stop.id && lhs.stopSequence == rhs.stopSequence
+    }
 }
 
 // MARK: - Trip
-public struct Trip: Codable {
+public struct Trip: Model {
     public let calendarDescription, calendarID: String
     public let dates: [String]
     public let id: String
@@ -54,10 +64,16 @@ public struct Trip: Codable {
         case calendarID = "calendar_id"
         case dates, id, schedule
     }
+    
+    public static func < (lhs: Trip, rhs: Trip) -> Bool {
+        lhs.id == rhs.id
+    }
 }
 
 // MARK: - Schedule
-public struct Schedule: Codable {
+public struct Schedule: Model {
+    public var id: UUID = .init()
+
     public let arrivalTime, arrivalTimeOperation, stopID: String
     public let stopSequence: Int
     public let travelTime: String
@@ -68,5 +84,10 @@ public struct Schedule: Codable {
         case stopID = "stop_id"
         case stopSequence = "stop_sequence"
         case travelTime = "travel_time"
+    }
+    
+    
+    public static func < (lhs: Schedule, rhs: Schedule) -> Bool {
+        lhs.stopID == rhs.stopID && lhs.arrivalTime == rhs.arrivalTime
     }
 }

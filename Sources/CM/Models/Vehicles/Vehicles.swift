@@ -3,16 +3,16 @@ import Foundation
 public typealias Vehicles = [Vehicle]
 
 // MARK: - Vehicle
-public struct Vehicle: Codable {
+public struct Vehicle: Model {
     public let bearing: Int
     public let blockID: String
-    public let currentStatus: CurrentStatus
+    public let currentStatus: String
     public let id: String
     public let lat: Double
     public let lineID: String
     public let lon: Double
     public let patternID, routeID: String
-    public let scheduleRelationship: ScheduleRelationship
+    public let scheduleRelationship: String
     public let shiftID: String
     public let speed: Double
     public let stopID: String
@@ -35,14 +35,8 @@ public struct Vehicle: Codable {
         case timestamp
         case tripID = "trip_id"
     }
-}
-
-public enum CurrentStatus: String, Codable {
-    case inTransitTo = "IN_TRANSIT_TO"
-    case incomingAt = "INCOMING_AT"
-    case stoppedAt = "STOPPED_AT"
-}
-
-public enum ScheduleRelationship: String, Codable {
-    case scheduled = "SCHEDULED"
+    
+    public static func < (lhs: Vehicle, rhs: Vehicle) -> Bool {
+        lhs.id == rhs.id
+    }
 }

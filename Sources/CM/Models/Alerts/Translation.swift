@@ -1,11 +1,17 @@
 import Foundation
 
 // MARK: - Translation
-public struct Translation: Codable {
-    public let language: Language
+public struct Translation: Model {
+    public var id: UUID = .init()
+    public let language: String
     public let text: String
-}
-
-public enum Language: String, Codable {
-    case pt = "pt"
+    
+    enum CodingKeys: CodingKey {
+        case language
+        case text
+    }
+    
+    public static func < (lhs: Translation, rhs: Translation) -> Bool {
+        lhs.text == rhs.text
+    }
 }
