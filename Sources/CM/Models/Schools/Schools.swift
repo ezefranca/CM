@@ -4,22 +4,22 @@ public typealias Schools = [School]
 
 // MARK: - School
 public struct School: Codable {
-    let address: String
-    let cicles: [Cicle]
-    let districtID: String
-    let districtName: String
-    let email, grouping, id, lat: String
-    let locality, lon, municipalityID: String
-    let municipalityName: String
-    let name: String
-    let nature: Nature
-    let parishID: String
-    let parishName: String
-    let phone, postalCode: String
-    let regionID: String
-    let regionName: String
-    let stops: [String]
-    let url: String
+    public let address: String
+    public let cicles: [Cicle]
+    public let districtID: String
+    public let districtName: String
+    public let email, grouping, id, lat: String
+    public let locality, lon, municipalityID: String
+    public let municipalityName: String
+    public let name: String
+    public let nature: Nature
+    public let parishID: String
+    public let parishName: String
+    public let phone, postalCode: String
+    public let regionID: String
+    public let regionName: String
+    public let stops: [String]
+    public let url: String
 
     enum CodingKeys: String, CodingKey {
         case address, cicles

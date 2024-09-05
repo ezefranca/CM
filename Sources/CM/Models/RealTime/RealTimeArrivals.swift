@@ -4,18 +4,18 @@ public typealias RealTimeArrivals = [RealTimeArrival]
 
 // MARK: - RealTimeArrival
 public struct RealTimeArrival: Codable {
-    let estimatedArrival: String?
-    let estimatedArrivalUnix: Int?
-    let headsign: String
-    let lineID: String
-    let observedArrival: String?
-    let observedArrivalUnix: Int?
-    let patternID: String
-    let routeID: String
-    let scheduledArrival: String
-    let scheduledArrivalUnix, stopSequence: Int
-    let tripID: String
-    let vehicleID: String?
+    public let estimatedArrival: String?
+    public let estimatedArrivalUnix: Int?
+    public let headsign: String
+    public let lineID: String
+    public let observedArrival: String?
+    public let observedArrivalUnix: Int?
+    public let patternID: String
+    public let routeID: String
+    public let scheduledArrival: String
+    public let scheduledArrivalUnix, stopSequence: Int
+    public let tripID: String
+    public let vehicleID: String?
 
     enum CodingKeys: String, CodingKey {
         case estimatedArrival = "estimated_arrival"

@@ -2,11 +2,11 @@ import Foundation
 
 // MARK: - Municipality
 public struct Municipality: Codable {
-    let districtID: String
-    let districtName: String
-    let id, name, municipalityPrefix: String
-    let regionID: String
-    let regionName: String
+    public let districtID: String
+    public let districtName: String
+    public let id, name, municipalityPrefix: String
+    public let regionID: String
+    public let regionName: String
 
     enum CodingKeys: String, CodingKey {
         case districtID = "district_id"

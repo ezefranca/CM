@@ -4,28 +4,28 @@ public typealias FacilitiesStores = [FacilityStore]
 
 // MARK: - Facility
 public struct FacilityStore: Codable {
-    let activeCounters: Int
-    let address: String
-    let brandName: String
-    let currentRatio: Double
-    let currentStatus: String
-    let currentlyWaiting: Int
-    let districtID, districtName, email: String
-    let expectedWaitTime: Int
-    let googlePlaceID: String
-    let hoursFriday, hoursMonday, hoursSaturday: [String]
-    let hoursSpecial: String
-    let hoursSunday, hoursThursday, hoursTuesday, hoursWednesday: [String]
-    let id: String
-    let isOpen: Bool
-    let lat, locality, lon, municipalityID: String
-    let municipalityName, name, parishID, parishName: String
-    let phone, postalCode: String
-    let regionID: String
-    let regionName: String
-    let shortName: String
-    let stops: [String]
-    let url: String
+    public let activeCounters: Int
+    public let address: String
+    public let brandName: String
+    public let currentRatio: Double
+    public let currentStatus: String
+    public let currentlyWaiting: Int
+    public let districtID, districtName, email: String
+    public let expectedWaitTime: Int
+    public let googlePlaceID: String
+    public let hoursFriday, hoursMonday, hoursSaturday: [String]
+    public let hoursSpecial: String
+    public let hoursSunday, hoursThursday, hoursTuesday, hoursWednesday: [String]
+    public let id: String
+    public let isOpen: Bool
+    public let lat, locality, lon, municipalityID: String
+    public let municipalityName, name, parishID, parishName: String
+    public let phone, postalCode: String
+    public let regionID: String
+    public let regionName: String
+    public let shortName: String
+    public let stops: [String]
+    public let url: String
 
     enum CodingKeys: String, CodingKey {
         case activeCounters = "active_counters"

@@ -2,6 +2,6 @@ import Foundation
 
 // MARK: - Entity
 public struct Entity: Codable {
-    let id: String
-    let alert: Alert
+    public let id: String
+    public let alert: Alert
 }

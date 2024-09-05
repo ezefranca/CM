@@ -2,23 +2,23 @@ import Foundation
 
 // MARK: - Stop
 public struct Stop: Codable {
-    let districtID: String
-    let districtName: String
-    let facilities: [String]
-    let id, lat: String
-    let lines: [String]
-    let locality: String?
-    let lon, municipalityID: String
-    let municipalityName: String
-    let name: String
-    let operationalStatus: OperationalStatus
-    let parishID, parishName: String?
-    let patterns: [String]
-    let regionID: String
-    let regionName: String
-    let routes: [String]
-    let shortName: String?
-    let stopID, ttsName, wheelchairBoarding: String
+    public let districtID: String
+    public let districtName: String
+    public let facilities: [String]
+    public let id, lat: String
+    public let lines: [String]
+    public let locality: String?
+    public let lon, municipalityID: String
+    public let municipalityName: String
+    public let name: String
+    public let operationalStatus: OperationalStatus
+    public let parishID, parishName: String?
+    public let patterns: [String]
+    public let regionID: String
+    public let regionName: String
+    public let routes: [String]
+    public let shortName: String?
+    public let stopID, ttsName, wheelchairBoarding: String
 
     enum CodingKeys: String, CodingKey {
         case districtID = "district_id"

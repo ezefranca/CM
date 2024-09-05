@@ -4,14 +4,14 @@ public typealias Lines = [Line]
 
 // MARK: - Line
 public struct Line: Codable {
-    let color: String
-    let facilities: [String?]
-    let id: String
-    let localities: [String?]
-    let longName: String
-    let municipalities, patterns, routes: [String]
-    let shortName: String
-    let textColor: String
+    public let color: String
+    public let facilities: [String?]
+    public let id: String
+    public let localities: [String?]
+    public let longName: String
+    public let municipalities, patterns, routes: [String]
+    public let shortName: String
+    public let textColor: String
 
     enum CodingKeys: String, CodingKey {
         case color, facilities, id, localities

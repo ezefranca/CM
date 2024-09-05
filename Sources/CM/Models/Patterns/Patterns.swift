@@ -2,16 +2,16 @@ import Foundation
 
 // MARK: - Patterns
 public struct Patterns: Codable {
-    let color: String
-    let direction: Int
-    let facilities: [String]
-    let headsign, id, lineID: String
-    let localities: [String]
-    let municipalities: [String]
-    let path: [Path]
-    let routeID, shapeID, shortName, textColor: String
-    let trips: [Trip]
-    let validOn: [String]
+    public let color: String
+    public let direction: Int
+    public let facilities: [String]
+    public let headsign, id, lineID: String
+    public let localities: [String]
+    public let municipalities: [String]
+    public let path: [Path]
+    public let routeID, shapeID, shortName, textColor: String
+    public let trips: [Trip]
+    public let validOn: [String]
 
     enum CodingKeys: String, CodingKey {
         case color, direction, facilities, headsign, id
@@ -28,10 +28,10 @@ public struct Patterns: Codable {
 
 // MARK: - Path
 public struct Path: Codable {
-    let allowDropOff, allowPickup: Bool
-    let distanceDelta: Double
-    let stop: Stop
-    let stopSequence: Int
+    public let allowDropOff, allowPickup: Bool
+    public let distanceDelta: Double
+    public let stop: Stop
+    public let stopSequence: Int
 
     enum CodingKeys: String, CodingKey {
         case allowDropOff = "allow_drop_off"
@@ -44,10 +44,10 @@ public struct Path: Codable {
 
 // MARK: - Trip
 public struct Trip: Codable {
-    let calendarDescription, calendarID: String
-    let dates: [String]
-    let id: String
-    let schedule: [Schedule]
+    public let calendarDescription, calendarID: String
+    public let dates: [String]
+    public let id: String
+    public let schedule: [Schedule]
 
     enum CodingKeys: String, CodingKey {
         case calendarDescription = "calendar_description"
@@ -58,9 +58,9 @@ public struct Trip: Codable {
 
 // MARK: - Schedule
 public struct Schedule: Codable {
-    let arrivalTime, arrivalTimeOperation, stopID: String
-    let stopSequence: Int
-    let travelTime: String
+    public let arrivalTime, arrivalTimeOperation, stopID: String
+    public let stopSequence: Int
+    public let travelTime: String
 
     enum CodingKeys: String, CodingKey {
         case arrivalTime = "arrival_time"
