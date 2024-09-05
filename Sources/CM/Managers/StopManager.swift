@@ -1,11 +1,17 @@
 import Foundation
 
 public class StopManager {
-    private let stopRoutes = StopRoutes()
+    private let apiClient = APIClient.shared
     
     public init() {}
     
-    public func getRealTimeArrivals(stopId: String) async throws -> [RealTimeArrival] {
-        return try await stopRoutes.fetchRealTimeArrivals(stopId: stopId)
+    // Fetch all service alerts
+    public func getStops() async throws -> Stops {
+        guard let url = Endpoints.stops.url else {
+            throw URLError(.badURL)
+        }
+        
+        let stops: Stops = try await apiClient.fetch(url: url)
+        return stops
     }
 }

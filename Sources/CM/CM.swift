@@ -165,7 +165,7 @@ final class CMTests: XCTestCase {
         let stopManager = StopManager()
         
         do {
-            let stops = try await stopManager.getRealTimeArrivals(stopId: "060282")
+            let stops = try await stopManager.getStops()
             XCTAssertGreaterThan(stops.count, 0, "Expected at least one stop in the response")
         } catch {
             XCTFail("Error fetching stops: \(error)")
